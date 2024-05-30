@@ -1,7 +1,8 @@
 import './header.css';
 import styled from 'styled-components';
 
-const IconContainer = styled.div`
+const IconItem = styled.li`
+    list-style-type: none;
     width: 20px;
     height: auto;
     display: flex;
@@ -9,7 +10,7 @@ const IconContainer = styled.div`
     object-fit: cover;
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.ul`
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +32,8 @@ const HeaderContainerImg = styled.img`
    height: auto;
    object-fit: cover;
 `
-const HeaderContainerH1 = styled.h1`
+const HeaderItem = styled.li`
+    list-style-type: none;
    font-size: 13.5px;
    font-family: 'Open Sans', sans-serif;
    font-weight: 500;
@@ -49,17 +51,19 @@ const Header = () => {
     return (
         <header>
             <HeaderContainer>
-                <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo" />
-                <HeaderContainerH1>Nosotros</HeaderContainerH1>
-                <HeaderContainerH1>Soluciones y servicios</HeaderContainerH1>
-                <HeaderContainerH1>Blog</HeaderContainerH1>
-                <HeaderContainerH1>Se parte de ASAP</HeaderContainerH1>
-                <HeaderContainerH1>Contacto</HeaderContainerH1>
+                <HeaderItem>
+                    <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo"/>
+                </HeaderItem>
+                <HeaderItem>Nosotros</HeaderItem>
+                <HeaderItem>Soluciones y servicios</HeaderItem>
+                <HeaderItem>Blog</HeaderItem>
+                <HeaderItem>Se parte de ASAP</HeaderItem>
+                <HeaderItem>Contacto</HeaderItem>
 
-                <IconContainer>
+                <IconItem>
                     <img src="src/assets/bandera_argentina.svg" alt="bandera argentina" />
                     <img src="src/assets/bandera_GB.svg" alt="bandera gb" />
-                </IconContainer>
+                </IconItem>
             </HeaderContainer>
         </header>
     )
