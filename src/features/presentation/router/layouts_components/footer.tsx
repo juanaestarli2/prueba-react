@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 const InnerContainer = styled.div`
-    width: 80%;
+    width: 65%;
     display: flex;
     flex-direction: column;
-    padding: 40px 0;
 `
 
 const LogoContainer = styled.div`
-
 img {
     width: 150px;
     margin-bottom: 20px;
@@ -16,54 +14,56 @@ img {
 `
 
 const FooterInner = styled.div`
-display: flex;
-/* flex-wrap: wrap;
-justify-content: center;
-justify-content: space-around;  */
-/* max-width: 1200px;*/
-/* margin: 0 auto;
-padding: 0 20px; */
+    display: flex;
+    margin-top: 50px;
 `
 
 const DatosContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 10px;
 `
 
 const EmpresaContainer = styled.ul`
- list-style-type: none;
- padding-left: 0;
-margin: 10px;
+    list-style-type: none;
+    padding-left: 60px;
+    margin: 0;
 `
 
 const SolucionesContainer = styled.ul`
-padding-left: 0;
- list-style-type: none;       
-margin: 10px;
+    list-style-type: none;
+    padding-left: 60px;
+    margin: 0;       
 `
 
 const ExtraContainer = styled.ul`
-padding-left: 0;
- list-style-type: none;
-margin: 10px;
+    list-style-type: none;
+    padding-left: 60px;
+    margin: 0;
+`
+
+const DatosSpan = styled.span`
+    font-style: italic;
+    font-family: Calibri;
+    color: #7A7A7A;
+    font-size: 20px;
+    margin-bottom: 15px;
 `
 
 const Item = styled.li`
-display: flex;
-color: #7A7A7A;
-font-size: 14px;
-font-family: 'Open Sans', sans-serif;
-line-height: 30px;
+    display: flex;
+    color: #7A7A7A;
+    font-size: 20px;
+    font-family: Calibri;
+    line-height: 35px;
 `
 
 const ItemH1 = styled.li`
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-color: #565b62;
-font-weight: bold;
-line-height:40px;
-margin-top:15px;
+    font-size: 22px;
+    font-family: Calibri;
+    color: #565b62;
+    font-weight: 600;
+    line-height: 45px;
+    margin-top: 8px;
 `
 
 const FooterContainer = styled.div`
@@ -71,6 +71,12 @@ const FooterContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('/src/assets/footerImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 28%;
+    position: absolute;
+    margin-top: 45px;
 `
 const HR = styled.hr`
     background-color: #68bc9352;
@@ -88,14 +94,15 @@ const Footer = () => {
                 </LogoContainer>
                 <FooterInner>
                     <DatosContainer>
-                        <span>Av. Del Libertador 7208 Torre II, Piso 2, Oficina 2.6</span>
-                        <span>HIT Cel, Nuñez</span>
-                        <span>ASAP CONSULTING © 2022</span>
+                        <DatosSpan>Av. Del Libertador 7208 Torre II, Piso 2, Oficina 2.6 
+                            <br/>HIT Cel, Nuñez
+                        </DatosSpan>
+                        <DatosSpan>ASAP CONSULTING © 2022</DatosSpan>
                     </DatosContainer>
                     <EmpresaContainer>
                         <ItemH1>Empresa</ItemH1>
-                        <Item>Nuestro Blog</Item>
                         <Item>Nosotros</Item>
+                        <Item>Nuestro Blog</Item>
                         <Item>Capacitacion</Item>
                         <Item>Clientes</Item>
                         <Item>Casos de exito</Item>
