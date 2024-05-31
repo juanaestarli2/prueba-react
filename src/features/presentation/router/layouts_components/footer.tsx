@@ -1,43 +1,52 @@
 import styled from 'styled-components';
 
-const FooterContainer = styled.div`
-padding: 40px 0;
+const InnerContainer = styled.div`
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
 `
 
 const LogoContainer = styled.div`
-display: flex;
-justify-content: center;
-margin-bottom: 20px;
 
 img {
-  width: 150px;
-  height: auto;
+    width: 150px;
+    margin-bottom: 20px;
 }
 `
 
 const FooterInner = styled.div`
 display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
+/* flex-wrap: wrap;
+justify-content: center;
+justify-content: space-around;  */
+/* max-width: 1200px;*/
+/* margin: 0 auto;
+padding: 0 20px; */
 `
 
-const DatosContainer = styled.ul`
-margin: 15px;
+const DatosContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 `
 
 const EmpresaContainer = styled.ul`
-margin: 15px;
+ list-style-type: none;
+ padding-left: 0;
+margin: 10px;
 `
 
-const SolucionesContainer = styled.ul`       
-margin: 15px;
+const SolucionesContainer = styled.ul`
+padding-left: 0;
+ list-style-type: none;       
+margin: 10px;
 `
 
 const ExtraContainer = styled.ul`
-margin: 15px;
+padding-left: 0;
+ list-style-type: none;
+margin: 10px;
 `
 
 const Item = styled.li`
@@ -49,7 +58,6 @@ line-height: 30px;
 `
 
 const ItemH1 = styled.li`
-display: flex;
 font-size: 15px;
 font-family: 'Open Sans', sans-serif;
 color: #565b62;
@@ -58,18 +66,31 @@ line-height:40px;
 margin-top:15px;
 `
 
+const FooterContainer = styled.div`
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const HR = styled.hr`
+    background-color: #68bc9352;
+    border: none;
+    height: 2px;
+`
+
 const Footer = () => {
     return(
-        <footer>
-            <FooterContainer>
+        <FooterContainer>
+            <InnerContainer>
                 <LogoContainer>
                     <img src="src/assets/logoAsap.png" alt="asap logo" />
+                    <HR/>
                 </LogoContainer>
                 <FooterInner>
                     <DatosContainer>
-                        <Item>Av. Del Libertador 7208 Torre II, Piso 2, Oficina 2.6</Item>
-                        <Item>HIT Cel, Nuñez</Item>
-                        <Item>ASAP CONSULTING © 2022</Item>
+                        <span>Av. Del Libertador 7208 Torre II, Piso 2, Oficina 2.6</span>
+                        <span>HIT Cel, Nuñez</span>
+                        <span>ASAP CONSULTING © 2022</span>
                     </DatosContainer>
                     <EmpresaContainer>
                         <ItemH1>Empresa</ItemH1>
@@ -93,8 +114,8 @@ const Footer = () => {
                         <ItemH1>Busquedas Laborales</ItemH1>
                     </ExtraContainer>
                 </FooterInner>
-            </FooterContainer>
-        </footer>
+            </InnerContainer>
+        </FooterContainer>
     )
 }
 
