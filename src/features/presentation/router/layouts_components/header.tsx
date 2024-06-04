@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './header.css';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
@@ -65,7 +64,7 @@ const Header = () => {
         </Link>
         <HeaderItem>Soluciones y servicios</HeaderItem>
         <HeaderItem>Blog</HeaderItem>
-        <Link to="https://www.linkedin.com/company/asap-consulting-s.a./">
+        <Link to="https://www.linkedin.com/company/asap-consulting-s.a./" target="_blank">
           <HeaderItem>Se parte de ASAP</HeaderItem>
         </Link>
         <Link to="/contacto">
