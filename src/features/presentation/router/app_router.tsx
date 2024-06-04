@@ -5,7 +5,7 @@ export const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<MainLayout />} />
+        <Route path="/*" element={<MainLayout />} />
       </Routes>
     </BrowserRouter>
   );

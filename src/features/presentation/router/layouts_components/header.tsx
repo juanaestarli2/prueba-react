@@ -1,72 +1,88 @@
+import { Link } from 'react-router-dom';
 import './header.css';
 import styled from 'styled-components';
 
-const IconItem = styled.li`
-    list-style-type: none;
-    width: 20px;
-    height: auto;
-    display: flex;
-    gap: 10px;
-    object-fit: cover;
-`;
+const HeaderContainer = styled.header`
+  /* todo: ver theme */
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  height: 13vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 
-const HeaderContainer = styled.ul`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-    gap: 70px;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
+  @media (max-width: 768px) {}
+  @media (max-width: 480px) {}
+`
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+`
+
+const LogoContainer = styled.div`
+  display: flex;
 `
 
 const HeaderContainerImg = styled.img`
-   width: 100px;
-   height: auto;
-   object-fit: cover;
+  width: 100px;
 `
-const HeaderItem = styled.li`
-    list-style-type: none;
-   font-size: 13.5px;
-   font-family: 'Open Sans', sans-serif;
-   font-weight: 500;
-   margin: 0;
-   color: #7A7A7A;
-   cursor: pointer;
-   transition: color 0.3s;
+
+const LanguageContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const LanguageItem = styled.div`
+`
+
+const HeaderItem = styled.span`
+  color: #7A7A7A;
+  cursor: pointer;
+  transition: color 0.3s;
    
-   &:hover {
-      color: #020101;
+  &:hover {
+    color: #020101;
   }
 `
-
 const Header = () => {
-    return (
-        <header>
-            <HeaderContainer>
-                <HeaderItem>
-                    <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo"/>
-                </HeaderItem>
-                <HeaderItem>Nosotros</HeaderItem>
-                <HeaderItem>Soluciones y servicios</HeaderItem>
-                <HeaderItem>Blog</HeaderItem>
-                <HeaderItem>Se parte de ASAP</HeaderItem>
-                <HeaderItem>Contacto</HeaderItem>
+  return (
+    <HeaderContainer>
+      <Container>
+        <LogoContainer>
+          <Link to="/">
+              <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo"/>
+          </Link>
+        </LogoContainer>
+        <Link to="/nosotros">
+          <HeaderItem>Nosotros</HeaderItem>
+        </Link>
+        <HeaderItem>Soluciones y servicios</HeaderItem>
+        <HeaderItem>Blog</HeaderItem>
+        <Link to="https://www.linkedin.com/company/asap-consulting-s.a./">
+          <HeaderItem>Se parte de ASAP</HeaderItem>
+        </Link>
+        <Link to="/contacto">
+          <HeaderItem>Contacto</HeaderItem>
+        </Link>
 
-                <IconItem>
-                    <img src="src/assets/bandera_argentina.svg" alt="bandera argentina" />
-                    <img src="src/assets/bandera_GB.svg" alt="bandera gb" />
-                </IconItem>
-            </HeaderContainer>
-        </header>
-    )
+        <LanguageContainer>
+            <LanguageItem>
+              <img src="src/assets/bandera_argentina.svg" alt="bandera argentina" />
+            </LanguageItem>
+            <LanguageItem>
+              <img src="src/assets/bandera_GB.svg" alt="bandera gb" />
+            </LanguageItem>
+        </LanguageContainer>
+      </Container>
+    </HeaderContainer>
+  )
 }
 
 export default Header
