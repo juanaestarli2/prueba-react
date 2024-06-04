@@ -63,7 +63,9 @@ const Header = () => {
           <HeaderItem>Nosotros</HeaderItem>
         </Link>
         <HeaderItem>Soluciones y servicios</HeaderItem>
+        <Link to="https://asap-consulting.net/blog/" target="_blank">
         <HeaderItem>Blog</HeaderItem>
+        </Link>
         <Link to="https://www.linkedin.com/company/asap-consulting-s.a./" target="_blank">
           <HeaderItem>Se parte de ASAP</HeaderItem>
         </Link>
