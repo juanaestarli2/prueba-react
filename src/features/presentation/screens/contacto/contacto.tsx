@@ -8,7 +8,6 @@ const ContactContainer = styled.div`
 const UpperContainer = styled.div`
   height: 13.875rem;
   background-image: url('/src/assets/ImgContacto.png');
-  background-color: rgba(255, 255, 255, 0.5);
   background-repeat: no-repeat;
   background-size: 180%;
   background-position-y: 28%;
@@ -16,6 +15,14 @@ const UpperContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; //opacity background-image
+
+  &:before{ //opacity background-image
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 `;
 
 const Title = styled.p`
@@ -23,6 +30,7 @@ font-size: 48px;
 color: #198eca;
 font-family: "Open Sans", roboto;
 font-weight: 700;
+position:relative;//opacity background-image
 `
 
 const InnerContainer = styled.div`
