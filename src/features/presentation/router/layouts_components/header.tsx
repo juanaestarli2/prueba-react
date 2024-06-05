@@ -30,7 +30,7 @@ const LogoContainer = styled.div`
 `
 
 const HeaderContainerImg = styled.img`
-  width: 100px;
+  width: 120px;
 `
 
 const LanguageContainer = styled.div`
