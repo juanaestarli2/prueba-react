@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.div`
@@ -80,8 +81,22 @@ const Input = styled.input`
     margin-bottom: 20px;
     border: 1px solid #ccc;   
     border-radius: 6px;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+
+    &:hover{
+      transition: 0.4s;
+      border: 1px solid black;
+    }
+
+    &:focus{
+      border: 1px solid #198eca;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: black;
+      font-size: 15px;
+      font-family: 'Open Sans', sans-serif;
+    }
 `;
 
 const TextArea = styled.textarea`
@@ -91,6 +106,23 @@ const TextArea = styled.textarea`
     border-radius: 6px;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
+
+    &:hover{
+      transition: 0.3s;
+      border: 1px solid black;
+    }
+
+    &:focus{
+      border: 1px solid #198eca;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: black;
+      font-size: 15px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
 `;
 
 const Button = styled.button`
@@ -102,9 +134,45 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   width: 16%;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease, cursor 0.3s ease;
+
+  &:disabled {
+    background-color: #198eca;;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+`;
+
+const TextButton = styled.span`
+  color: #999999; 
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1.5rem;
 `;
 
 const Contact = () => {
+
+    const[nombre, setName] = useState("");
+    const[apellido, setLastName] = useState("");
+    const[email, setEmail] = useState("");
+    const[asunto, setAsunto] = useState("");
+    const[mensaje, setMensaje] = useState("");
+
+    const [enableButton, setEnableButton] = useState(false)
+
+    useEffect(() => {
+        if(nombre == "") return setEnableButton(false);
+        if(apellido == "") return setEnableButton(false);
+        if(email == "") return setEnableButton(false);
+        if(asunto == "") return setEnableButton(false);
+        if(mensaje == "") return setEnableButton(false);
+
+        setEnableButton(true);
+    }, [nombre, apellido, email, asunto, mensaje]);
+
+
     return (
       <ContactContainer>
         <UpperContainer>
@@ -124,12 +192,14 @@ const Contact = () => {
                 Lunes a Viernes de 9 a 18hs
             </HorarioSpan>
             <Form>
-                <Input type="text" placeholder="Nombre" />
-                <Input type="text" placeholder="Apellido" />
-                <Input type="email" placeholder="Email" />
-                <Input type="text" placeholder="Asunto" />
-                <TextArea placeholder="Mensaje" />
-                <Button type="submit">Enviar</Button>
+                <Input type="text" placeholder="Nombre*" required onChange={(event) => setName(event.target.value)} />
+                {}
+                <Input type="text" placeholder="Apellido*" required onChange={(event) => setLastName(event.target.value)} />
+                <Input type="email" placeholder="Email*" required onChange={(event) => setEmail(event.target.value)}/>
+                <Input type="text" placeholder="Asunto*" required onChange={(event) => setAsunto(event.target.value)}/>
+                <TextArea placeholder="Mensaje*" required onChange={(event) => setMensaje(event.target.value)}/>
+                <Button type="submit" disabled={!enableButton}>Enviar</Button>
+                {!enableButton ? <TextButton>*campos obligatorios</TextButton> : null}
             </Form>
         </InnerContainer>
       </ContactContainer>
