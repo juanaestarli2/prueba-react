@@ -128,7 +128,6 @@ const Footer = () => {
                             <br/>HIT Cel, Nuñez
                         </DatosSpan>
                         <DatosSpan>ASAP CONSULTING © 2022</DatosSpan>
-                        <DatosSpan>
                             <SocialIcons>
                                 <WppIcon href="https://api.whatsapp.com/send?phone=5491135792713" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon={faWhatsapp} />
@@ -140,7 +139,6 @@ const Footer = () => {
                                     <FontAwesomeIcon icon={faInstagram} />
                                 </InstaIcon>
                             </SocialIcons>
-                        </DatosSpan>
                     </DatosContainer>
                     <EmpresaContainer>
                         <ItemH1>Empresa</ItemH1>
