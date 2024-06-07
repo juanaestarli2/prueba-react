@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.div`
@@ -134,15 +134,6 @@ const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   width: 16%;
-  position: relative;
-  transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease, cursor 0.3s ease;
-
-  &:disabled {
-    background-color: #198eca;;
-    color: white;
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
 `;
 
 const TextButton = styled.span`
@@ -152,6 +143,13 @@ const TextButton = styled.span`
   margin-top: 1.5rem;
 `;
 
+const TextError = styled.span`
+  color: #dc3232;;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1.8rem;
+`;
+
 const Contact = () => {
 
     const[nombre, setName] = useState("");
@@ -159,18 +157,29 @@ const Contact = () => {
     const[email, setEmail] = useState("");
     const[asunto, setAsunto] = useState("");
     const[mensaje, setMensaje] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+    const [hasError, setHasError] = useState(false);
 
-    const [enableButton, setEnableButton] = useState(false)
+    const handleClick = (event:any) => {
+      event.preventDefault();
+      setSubmitted(true);
 
-    useEffect(() => {
-        if(nombre == "") return setEnableButton(false);
-        if(apellido == "") return setEnableButton(false);
-        if(email == "") return setEnableButton(false);
-        if(asunto == "") return setEnableButton(false);
-        if(mensaje == "") return setEnableButton(false);
+      const nameValid = nombre.trim();
+        const lastNameValid = apellido.trim();
+        const emailValid = email.trim() && email.includes(".") && email.includes("@");
+        const asuntoValid = asunto.trim();
+        const mensajeValid = mensaje.trim();
 
-        setEnableButton(true);
-    }, [nombre, apellido, email, asunto, mensaje]);
+        if (nameValid && lastNameValid && emailValid && asuntoValid && mensajeValid) {
+            console.log("Form submitted");
+            setHasError(false);
+            setSubmitted(false); // Resetea
+        } else {
+            setHasError(true);
+        }
+  };
+
+
 
 
     return (
@@ -193,13 +202,24 @@ const Contact = () => {
             </HorarioSpan>
             <Form>
                 <Input type="text" placeholder="Nombre*" required onChange={(event) => setName(event.target.value)} />
-                {}
+                {(submitted && !nombre.trim()) ? <TextError>The field is required.</TextError> : null}
+
                 <Input type="text" placeholder="Apellido*" required onChange={(event) => setLastName(event.target.value)} />
+                {(submitted && !apellido.trim()) ? <TextError>The field is required.</TextError> : null}
+
                 <Input type="email" placeholder="Email*" required onChange={(event) => setEmail(event.target.value)}/>
+                {(submitted && !email.trim()) ? <TextError>The field is required.</TextError> : null}
+                {(submitted && email.trim() && (!email.includes(".") || !email.includes("@"))) ? <TextError>The e-mail address entered is invalid.</TextError> : null}
+
                 <Input type="text" placeholder="Asunto*" required onChange={(event) => setAsunto(event.target.value)}/>
+                {(submitted && !asunto.trim()) ? <TextError>The field is required.</TextError> : null}
+
                 <TextArea placeholder="Mensaje*" required onChange={(event) => setMensaje(event.target.value)}/>
-                <Button type="submit" disabled={!enableButton}>Enviar</Button>
-                {!enableButton ? <TextButton>*campos obligatorios</TextButton> : null}
+                {(submitted && !mensaje.trim()) ? <TextError>The field is required.</TextError> : null}
+
+                <Button type="submit" onClick={handleClick}>Enviar</Button>
+                <TextButton>*campos obligatorios</TextButton>
+                { hasError ? <TextError>Uno o más campos tienen un error. Por favor revisa e intenta de nuevo.</TextError> : null }
             </Form>
         </InnerContainer>
       </ContactContainer>
