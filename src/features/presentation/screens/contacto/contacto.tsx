@@ -81,6 +81,9 @@ const Input = styled.input`
     margin-bottom: 20px;
     border: 1px solid #ccc;   
     border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #7a7a7a;
 
     &:hover{
       transition: 0.4s;
@@ -106,6 +109,9 @@ const TextArea = styled.textarea`
     border-radius: 6px;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
+    color: #7a7a7a;
+    resize:none;
+    height: 180px;
 
     &:hover{
       transition: 0.3s;
