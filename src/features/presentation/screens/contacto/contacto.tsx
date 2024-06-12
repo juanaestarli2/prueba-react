@@ -8,14 +8,6 @@ const ContactContainer = styled.div`
   padding-top: 13vh;
 `;
 
-// const Title = styled.p`
-// font-size: 48px;
-// color: #198eca;
-// font-family: "Open Sans", roboto;
-// font-weight: 700;
-// position:fixed;
-// `
-
 const InnerContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -29,8 +21,7 @@ const Contact = () => {
 
     return (
       <ContactContainer>
-        <Banner/>
-            {/* <Title>CONTACTO</Title> */}
+        <Banner title={"CONTACTO"}/>
         <InnerContainer>
             <EncabezadoForm/>
             <FormContacto/>
