@@ -18,11 +18,12 @@ const HeaderContainer = styled.header`
   @media (max-width: 768px) {}
   @media (max-width: 480px) {}
 `
-const Container = styled.div`
+const Container = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  list-style: none;
 `
 
 const LogoContainer = styled.div`
@@ -41,7 +42,7 @@ const LanguageContainer = styled.div`
 const LanguageItem = styled.div`
 `
 
-const HeaderItem = styled.span`
+const HeaderItem = styled.li`
   color: #7A7A7A;
   cursor: pointer;
   transition: color 0.3s;
