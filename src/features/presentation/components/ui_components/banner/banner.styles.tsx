@@ -10,6 +10,7 @@ export const UpperContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   position: relative; //opacity background-image
 
   &:before{ //opacity background-image
@@ -21,9 +22,25 @@ export const UpperContainer = styled.div`
 `;
 
 export const Title = styled.p`
+margin: 0;
 font-size: 48px;
 color: #198eca;
 font-family: "Open Sans", roboto;
 font-weight: 700;
 position: relative;
 `;
+
+export const Extra = styled.p`
+text-align: center;
+margin: 0;
+font-size: 20px;
+color: #565b62;
+font-family: "Open Sans", roboto;
+font-weight: 400;
+position: relative;
+width: 50%;
+line-height: 1.2em;
+`
+export const BoldText = styled.span`
+font-weight: 700;
+`

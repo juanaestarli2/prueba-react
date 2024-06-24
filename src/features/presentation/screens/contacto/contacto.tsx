@@ -7,7 +7,7 @@ const Contact = () => {
 
     return (
       <ContactContainer>
-        <Banner title={"CONTACTO"}/>
+        <Banner title={"CONTACTO"} extra=""/>
         <InnerContainer>
             <EncabezadoForm/>
             <FormContacto/>

@@ -1,5 +1,5 @@
 import Contacto from "../screens/contacto/contacto";
-import { Nosotros } from "../screens/nosotros/nosotros";
+import Nosotros from "../screens/nosotros/nosotros";
 
 export const routesData = {
     "routes": [
