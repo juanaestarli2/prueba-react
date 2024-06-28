@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import DesplegableSoluciones from '../../components/base_components/DesplegableSoluciones';
 
 const HeaderContainer = styled.header`
   /* todo: ver theme */
@@ -52,6 +54,9 @@ const HeaderItem = styled.li`
   }
 `
 const Header = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <HeaderContainer>
       <Container>
@@ -63,7 +68,10 @@ const Header = () => {
         <Link to="/nosotros">
           <HeaderItem>Nosotros</HeaderItem>
         </Link>
-        <HeaderItem>Soluciones y servicios</HeaderItem>
+        <div>
+          <HeaderItem onClick={() => setOpen((prev) => !prev)}> Soluciones y servicios</HeaderItem>
+          {open && <DesplegableSoluciones/>}
+        </div>
         <Link to="https://asap-consulting.net/blog/" target="_blank">
         <HeaderItem>Blog</HeaderItem>
         </Link>

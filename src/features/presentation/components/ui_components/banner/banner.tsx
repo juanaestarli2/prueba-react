@@ -1,4 +1,4 @@
-import {UpperContainer, Title, Extra, BoldText} from './banner.styles';
+import {UpperContainer, Title, Extra} from './banner.styles';
 
 interface TitleProps {
     title: string;
@@ -6,8 +6,6 @@ interface TitleProps {
 }
 
 const Banner: React.FC<TitleProps> = ({title , extra}) => {
-  const parts = extra.split('ASAP Consulting');
-  const asap = 'ASAP Consulting';
   
   return (
     <UpperContainer>
