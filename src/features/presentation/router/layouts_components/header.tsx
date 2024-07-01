@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import DesplegableSoluciones from '../../components/base_components/DesplegableSoluciones';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderContainer = styled.header`
   /* todo: ver theme */
@@ -53,9 +55,25 @@ const HeaderItem = styled.li`
     color: #020101;
   }
 `
+
 const Header = () => {
 
   const [open, setOpen] = useState(false);
+  const timerRef = useRef<number | null>(null);
+
+
+  const handleMouseEnter = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 200);
+  };
 
   return (
     <HeaderContainer>
@@ -68,10 +86,14 @@ const Header = () => {
         <Link to="/nosotros">
           <HeaderItem>Nosotros</HeaderItem>
         </Link>
-        <div>
-          <HeaderItem onClick={() => setOpen((prev) => !prev)}> Soluciones y servicios</HeaderItem>
-          {open && <DesplegableSoluciones/>}
-        </div>
+        <Link to="/servicios">
+          <HeaderItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
+          Soluciones y servicios
+            <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '0.5rem', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}/></HeaderItem>
+          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            {open && <DesplegableSoluciones />}
+          </div>
+        </Link>
         <Link to="https://asap-consulting.net/blog/" target="_blank">
         <HeaderItem>Blog</HeaderItem>
         </Link>
