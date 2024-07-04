@@ -6,17 +6,17 @@ const DesplegableSoluciones = () => {
         <DesplegableBox>
             <ContainerBox>
                 <HeaderBox>
-                    <Imagen src="src/assets/capitalhumano.png"></Imagen>
+                    <Imagen src="https://asap-consulting.net/wp-content/uploads/2021/07/capitalhumano.png"></Imagen>
                     <Title>Human Capital Solution</Title>
                 </HeaderBox>
                 <ContentBox>
                     <List>
-                        <ListItem>
-                            <Link to="/soluciones-y-servicios/managed-services">Managed Services</Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link to="/soluciones-y-servicios/JR-squad">JR Squad</Link>
-                        </ListItem>
+                        <Link to="/soluciones-y-servicios/managed-services">
+                            <ListItem>Managed Services</ListItem>
+                        </Link>
+                        <Link to="/soluciones-y-servicios/JR-squad">
+                            <ListItem>JR Squad</ListItem>
+                        </Link>
                         <ListItem>Specialized Squad</ListItem>
                         <ListItem>CTO as Services</ListItem>
                     </List>

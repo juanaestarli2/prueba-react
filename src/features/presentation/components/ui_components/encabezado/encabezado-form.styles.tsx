@@ -9,6 +9,10 @@ export const TelContainer = styled.a`
     color: #198eca;
     font-size: 48px;
     font-weight: 700;
+    
+    &:hover{
+        color: #3cb5f3;
+    }
 `
 export const DatosSpan=styled.span`
     text-align: left;

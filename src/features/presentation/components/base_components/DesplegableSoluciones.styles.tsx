@@ -58,5 +58,11 @@ export const ListItem = styled.li`
     font-family: "Open Sans", roboto;
     font-weight: 500;
     color: #7a7a7a;
+    display: inline-block;
+    padding: 2px 5px;
     font-size: 18px;
+
+    &:hover {
+        background-color: #e7e7e770;
+    }
 `;
