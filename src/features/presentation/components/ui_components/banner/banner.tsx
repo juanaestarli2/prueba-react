@@ -2,7 +2,7 @@ import {UpperContainer, Title, Extra} from './banner.styles';
 
 interface TitleProps {
     title: string;
-    extra: string
+    extra: React.ReactNode;
 }
 
 const Banner: React.FC<TitleProps> = ({title , extra}) => {
