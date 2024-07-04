@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {DesplegableBox, ContainerBox, Title, List, ListItem, Imagen, ContentBox, HeaderBox} from './DesplegableSoluciones.styles'
 
 const DesplegableSoluciones = () => {
@@ -10,8 +11,12 @@ const DesplegableSoluciones = () => {
                 </HeaderBox>
                 <ContentBox>
                     <List>
-                        <ListItem>Managed Services</ListItem>
-                        <ListItem>JR Squad</ListItem>
+                        <ListItem>
+                            <Link to="/soluciones-y-servicios/managed-services">Managed Services</Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link to="/soluciones-y-servicios/JR-squad">JR Squad</Link>
+                        </ListItem>
                         <ListItem>Specialized Squad</ListItem>
                         <ListItem>CTO as Services</ListItem>
                     </List>
