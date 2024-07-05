@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {DesplegableBox, ContainerBox, Title, List, ListItem, Imagen, ContentBox, HeaderBox} from './DesplegableSoluciones.styles'
 
 const DesplegableSoluciones = () => {
+
+    const [isVisible, setIsVisible] = useState(true);
+
+    const closeDropdown = () => {
+        setIsVisible(false);
+    };
+
     return (
-        <DesplegableBox>
+        <>
+        {isVisible && (
+            <DesplegableBox>
             <ContainerBox>
                 <HeaderBox>
                     <Imagen src="https://asap-consulting.net/wp-content/uploads/2021/07/capitalhumano.png"></Imagen>
@@ -12,13 +22,13 @@ const DesplegableSoluciones = () => {
                 <ContentBox>
                     <List>
                         <Link to="/soluciones-y-servicios/managed-services">
-                            <ListItem>Managed Services</ListItem>
+                            <ListItem onClick={closeDropdown}>Managed Services</ListItem>
                         </Link>
                         <Link to="/soluciones-y-servicios/JR-squad">
-                            <ListItem>JR Squad</ListItem>
+                            <ListItem onClick={closeDropdown}>JR Squad</ListItem>
                         </Link>
-                        <ListItem>Specialized Squad</ListItem>
-                        <ListItem>CTO as Services</ListItem>
+                        <ListItem onClick={closeDropdown}>Specialized Squad</ListItem>
+                        <ListItem onClick={closeDropdown}>CTO as Services</ListItem>
                     </List>
                 </ContentBox>
             </ContainerBox>
@@ -37,8 +47,10 @@ const DesplegableSoluciones = () => {
                 </ContentBox>
             </ContainerBox>
         </DesplegableBox>
-    )
+        )}
+        </>
+    );
 
-}
+};
 
 export default DesplegableSoluciones
