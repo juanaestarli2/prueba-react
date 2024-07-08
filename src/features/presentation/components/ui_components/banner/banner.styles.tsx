@@ -22,19 +22,19 @@ export const UpperContainer = styled.div`
 `;
 
 export const Title = styled.p`
-margin: 0;
-font-size: 48px;
-color: #198eca;
-font-family: "Open Sans", roboto;
-font-weight: 700;
-position: relative;
+  margin: 0;
+  font-size: 48px;
+  color: #198eca;
+  font-family: "Open Sans", roboto;
+  font-weight: 700;
+  position: relative;
 `;
 
 export const Extra = styled.p`
 text-align: center;
 margin: 0;
 font-size: 20px;
-color: #7a7a7a;
+color: #565b62;
 font-family: "Open Sans", roboto;
 font-weight: 400;
 position: relative;
