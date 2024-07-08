@@ -1,17 +1,17 @@
-import {CardContainer, Text, Container} from './card.styles';
+import {CardContainer, Text, Image} from './card.styles';
 
 interface TitleProps {
     text: React.ReactNode;
+    imageSrc?: string;
 }
 
-const Card: React.FC<TitleProps> = ({text}) => {
+const Card: React.FC<TitleProps> = ({text, imageSrc}) => {
   
   return (
-    <Container>
-        <CardContainer>
-            <Text>{text}</Text>
-        </CardContainer>
-    </Container>
+    <CardContainer>
+        {imageSrc && <Image src={imageSrc} alt="Card Image" />}
+        <Text>{text}</Text>
+    </CardContainer>
   );
 };
 
