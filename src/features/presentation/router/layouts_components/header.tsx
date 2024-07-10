@@ -75,6 +75,10 @@ const Header = () => {
     }, 200);
   };
 
+  const handleItemSelect = (item: boolean) => {
+    setOpen(item);
+  }
+
   return (
     <HeaderContainer>
       <Container>
@@ -86,14 +90,12 @@ const Header = () => {
         <Link to="/nosotros">
           <HeaderItem>Nosotros</HeaderItem>
         </Link>
-        <Link to="">
           <HeaderItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
           Soluciones y servicios
             <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '0.5rem', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}/></HeaderItem>
           <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {open && <DesplegableSoluciones />}
+            {open && <DesplegableSoluciones onItemSelect={handleItemSelect}/>}
           </div>
-        </Link>
         <Link to="https://asap-consulting.net/blog/" target="_blank">
         <HeaderItem>Blog</HeaderItem>
         </Link>

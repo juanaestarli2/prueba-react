@@ -1,18 +1,13 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {DesplegableBox, ContainerBox, Title, List, ListItem, Imagen, ContentBox, HeaderBox} from './DesplegableSoluciones.styles'
 
-const DesplegableSoluciones = () => {
+    function DesplegableSoluciones({ onItemSelect }:any) {
+        const closeDropdown = (item:boolean) => {
+          onItemSelect(item);
+        };
 
-    const [isVisible, setIsVisible] = useState(true);
-
-    const closeDropdown = () => {
-        setIsVisible(false);
-    };
-
-    return (
+        return (
         <>
-        {isVisible && (
             <DesplegableBox>
             <ContainerBox>
                 <HeaderBox>
@@ -22,13 +17,13 @@ const DesplegableSoluciones = () => {
                 <ContentBox>
                     <List>
                         <Link to="/managed-services">
-                            <ListItem onClick={closeDropdown}>Managed Services</ListItem>
+                            <ListItem onClick={() => closeDropdown(false)}>Managed Services</ListItem>
                         </Link>
                         <Link to="/JR-squad">
-                            <ListItem onClick={closeDropdown}>JR Squad</ListItem>
+                            <ListItem  onClick={() => closeDropdown(false)}>JR Squad</ListItem>
                         </Link>
-                        <ListItem onClick={closeDropdown}>Specialized Squad</ListItem>
-                        <ListItem onClick={closeDropdown}>CTO as Services</ListItem>
+                        <ListItem onClick={() => closeDropdown(false)}>Specialized Squad</ListItem>
+                        <ListItem onClick={() => closeDropdown(false)}>CTO as Services</ListItem>
                     </List>
                 </ContentBox>
             </ContainerBox>
@@ -46,8 +41,7 @@ const DesplegableSoluciones = () => {
                     </List>
                 </ContentBox>
             </ContainerBox>
-        </DesplegableBox>
-        )}
+            </DesplegableBox>
         </>
     );
 
