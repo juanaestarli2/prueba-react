@@ -21,10 +21,10 @@ const DesplegableSoluciones = () => {
                 </HeaderBox>
                 <ContentBox>
                     <List>
-                        <Link to="/soluciones-y-servicios/managed-services">
+                        <Link to="/managed-services">
                             <ListItem onClick={closeDropdown}>Managed Services</ListItem>
                         </Link>
-                        <Link to="/soluciones-y-servicios/JR-squad">
+                        <Link to="/JR-squad">
                             <ListItem onClick={closeDropdown}>JR Squad</ListItem>
                         </Link>
                         <ListItem onClick={closeDropdown}>Specialized Squad</ListItem>

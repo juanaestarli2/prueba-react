@@ -20,16 +20,40 @@ export const routesData = {
        {
         "id": "managed-services",
         "name": "managed-services",
-        "path": "soluciones-y-servicios/managed-services",
+        "path": "managed-services",
         "component": () => <ManagedServices/>,
         "subRoutes": []
        },
        {
         "id": "JR-squad",
         "name": "JR-squad",
-        "path": "soluciones-y-servicios/JR-squad",
+        "path": "JR-squad",
         "component": () => <JRsquadScreen/>,
         "subRoutes": []
        }
     ]
 }
+
+//
+// {
+//     "id": "soluciones-y-servicios",
+//     "name": "soluciones-y-servicios",
+//     "path": "soluciones-y-servicios",
+//     "subRoutes": [
+//         {
+//             "id": "managed-services",
+//             "name": "managed-services",
+//             "path": "managed-services",
+//             "component": () => <ManagedServices/>,
+//             "subRoutes": []
+//             },
+//             {
+//             "id": "JR-squad",
+//             "name": "JR-squad",
+//             "path": "JR-squad",
+//             "component": () => <JRsquadScreen/>,
+//             "subRoutes": []
+//             }
+//     ]
+//    },
+// ]
