@@ -71,6 +71,9 @@ export const Button = styled.button`
   font-size: 16px;
   cursor: pointer;
   width: 16%;
+  &:focus {
+    outline: none;
+}
 `;
 
 export const TextButton = styled.span`
