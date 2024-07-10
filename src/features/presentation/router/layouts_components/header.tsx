@@ -90,12 +90,14 @@ const Header = () => {
         <Link to="/nosotros">
           <HeaderItem>Nosotros</HeaderItem>
         </Link>
+        <div>
           <HeaderItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
           Soluciones y servicios
             <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '0.5rem', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}/></HeaderItem>
           <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {open && <DesplegableSoluciones onItemSelect={handleItemSelect}/>}
           </div>
+        </div>
         <Link to="https://asap-consulting.net/blog/" target="_blank">
         <HeaderItem>Blog</HeaderItem>
         </Link>
