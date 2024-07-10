@@ -34,7 +34,7 @@ export const Extra = styled.p`
 text-align: center;
 margin: 0;
 font-size: 20px;
-color: #565b62;
+color: #7a7a7a;
 font-family: "Open Sans", roboto;
 font-weight: 400;
 position: relative;
