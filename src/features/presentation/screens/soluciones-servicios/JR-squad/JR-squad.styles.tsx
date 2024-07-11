@@ -25,3 +25,33 @@ export const Text = styled.p`
     margin: 0;
     max-width: 1200px; 
 `;
+
+export const FirstContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    max-width: 1500px; 
+`
+
+export const Image = styled.img`
+    width: 240px;
+`
+
+export const Text2 = styled.p`
+    font-size: 24px;
+    text-align: left;
+    color: #7a7a7a;
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    max-width: 700px;
+    padding: 50px; 
+`
+
+export const ContainerBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+`
