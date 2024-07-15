@@ -7,10 +7,12 @@ export const CardContainer = styled.div`
     background-color: #fff;
     border-radius: 22px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .11);
-    margin: 33px 33px 0 10px;
+    /* margin: 33px 33px 0 10px;
     padding: 20px 0 20px 0;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1000px; */
+    min-height: 300px;
+    align-items: stretch; 
 `;
 
 export const Text = styled.p`
@@ -19,7 +21,7 @@ export const Text = styled.p`
     color: #565b62;
     line-height: 1.5;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     margin: 0;
 `;
 

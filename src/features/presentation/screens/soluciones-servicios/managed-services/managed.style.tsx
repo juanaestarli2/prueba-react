@@ -15,12 +15,15 @@ export const Container = styled.div`
 `;
 
 export const ContainerSec = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding-bottom: 25px;
-    gap: 10px;
+    gap: 10px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; // Espacio entre tarjetas
 `;
 
 export const ContainerBox = styled.div`
@@ -31,10 +34,12 @@ export const ContainerBox = styled.div`
 `;
 
 export const ContainerBoxSec = styled.div`
-    display: flex;
+    /* display: flex;
     justify-content: center;
     width: 100%; 
-    max-width: 500px;
+    max-width: 500px; */
+    display: flex;
+    /* flex-direction: column; */
     
 `;
 
