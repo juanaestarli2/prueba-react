@@ -26,7 +26,7 @@ export const Text = styled.p`
     max-width: 1200px; 
 `;
 
-export const FirstContainer = styled.div`
+export const InnerContainer = styled.div`
     display: flex;
     justify-content: center;
     width: 100%; 
@@ -55,3 +55,17 @@ export const ContainerBox = styled.div`
     justify-content: center;
     gap: 80px;
 `
+
+export const Text3 = styled.p`
+    font-size: 24px;
+    text-align: right;
+    color: #7a7a7a;
+    line-height: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    max-width: 650px;
+    padding: 50px; 
+`
+
+export const CardContainer = styled.div`
+`;
