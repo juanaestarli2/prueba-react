@@ -18,7 +18,7 @@ export const BoxContainer = styled.div`
     flex-direction: column;
     width: 10rem;
     align-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.2rem;
 `;
 
@@ -34,7 +34,6 @@ export const TextContainer = styled.div`
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    align-items: left;
     gap: 1.2rem;
 `;
 
