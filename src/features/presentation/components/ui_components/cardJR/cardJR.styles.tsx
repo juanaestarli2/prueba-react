@@ -9,7 +9,7 @@ export const CardContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6rem;
+    /* gap: 6rem; */ //GIU
 
 `
 
@@ -18,8 +18,8 @@ export const BoxContainer = styled.div`
     flex-direction: column;
     width: 10rem;
     align-content: center;
-    align-items: flex-start;
-    gap: 1.2rem;
+    align-items: flex-start; //GIU
+    /* gap: 1.2rem; */ //GIU
 `;
 
 export const Text = styled.div`
@@ -28,24 +28,29 @@ export const Text = styled.div`
     font-weight: 400;
     line-height: 1em;
     text-align: left;
+    height: 5rem; //GIU
+    display: flex; //GIU
+    align-items: center; //GIU
 `;
 
 export const TextContainer = styled.div`
     display: flex;
-    gap: 1rem;
+    /* gap: 1rem; */ //GIU
     flex-direction: column;
-    gap: 1.2rem;
+    align-items: left;
+    /* gap: 1.2rem; */ //GIU
 `;
 
 export const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    /* gap: 3rem; */ //GIU
     align-items: center;
 `
 
 export const Image = styled.img`
     width: 6.5rem;
+    /* height: 5rem;//GIU */
 `
 
 export const Image2 = styled.img`
@@ -53,6 +58,11 @@ export const Image2 = styled.img`
 `
 
 export const PlusIconContainer = styled.div`
-    padding-left: 20px;
+    /* padding-left: 20px; */ //GIU
+    padding: 5px 0 5px 20px;
 `
-
+export const Test = styled.div`
+    height: 5rem; 
+    display: flex;
+    align-items: center;
+`
