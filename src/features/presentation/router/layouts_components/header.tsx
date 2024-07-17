@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import DesplegableSoluciones from '../../components/base_components/DesplegableSoluciones';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import BurguerButton from '../../components/ui_components/burguerButton/BurguerButton';
 
 const HeaderContainer = styled.header`
   /* todo: ver theme */
@@ -79,45 +80,127 @@ const Header = () => {
     setOpen(item);
   }
 
-  return (
-    <HeaderContainer>
-      <Container>
-        <LogoContainer>
-          <Link to="/">
-              <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo"/>
-          </Link>
-        </LogoContainer>
-        <Link to="/nosotros">
-          <HeaderItem>Nosotros</HeaderItem>
-        </Link>
-        <div>
-          <HeaderItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
-          Soluciones y servicios
-            <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '0.5rem', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}/></HeaderItem>
-          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {open && <DesplegableSoluciones onItemSelect={handleItemSelect}/>}
-          </div>
-        </div>
-        <Link to="https://asap-consulting.net/blog/" target="_blank">
-        <HeaderItem>Blog</HeaderItem>
-        </Link>
-        <Link to="https://www.linkedin.com/company/asap-consulting-s.a./" target="_blank">
-          <HeaderItem>Se parte de ASAP</HeaderItem>
-        </Link>
-        <Link to="/contacto">
-          <HeaderItem>Contacto</HeaderItem>
-        </Link>
+  //Prueba responsive navbar
+const Navbar = styled.nav` //NavContainer
+  h2{
+    color: white;
+    font-weight: 400;
+    span{
+      font-weight: bold;
+    }
+  }
 
-        <LanguageContainer>
-            <LanguageItem>
-              <img src="src/assets/bandera_argentina.svg" alt="bandera argentina" />
-            </LanguageItem>
-            <LanguageItem>
-              <img src="src/assets/bandera_GB.svg" alt="bandera gb" />
-            </LanguageItem>
-        </LanguageContainer>
-      </Container>
-    </HeaderContainer>
+  padding: .4rem;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a{
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+  .links{
+    position:absolute;
+    top: -700px;
+    left: -200px;
+    margin-left: auto; //para que se centren cuando bajen
+    margin-right: auto; //para que se centren cuando bajen
+    text-align: center;
+    a{
+      color: black;
+      font-size: 2rem;
+      display: block; // para que esten uno arriba del otro
+    }
+    @media(min-width: 768px) { 
+      position: initial;
+      margin: 0;
+      a{
+        font-size:1rem;
+        color: white;
+        display: inline;
+      }
+    }
+  }
+  .links.active{ //para cuando tenga la clase active
+    width:100%;
+    display: block;
+    position:absolute;
+    margin-left:auto;
+    margin-right: auto;
+    top: 30%;
+    left:0;
+    right: 0;
+    text-align: center;
+    a{
+      color: #333;
+    }
+  }
+  .burguer {
+    @media(min-width: 768px){
+      display: none;
+    }
+  }
+` 
+
+//
+
+  return (
+    // <HeaderContainer>
+    //   <Container>
+    //     <LogoContainer>
+    //       <Link to="/">
+    //           <HeaderContainerImg src="src/assets/logoAsap.png" alt="asap logo"/>
+    //       </Link>
+    //     </LogoContainer>
+    //     <Link to="/nosotros">
+    //       <HeaderItem>Nosotros</HeaderItem>
+    //     </Link>
+    //     <div>
+    //       <HeaderItem onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
+    //       Soluciones y servicios
+    //         <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: '0.5rem', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}/></HeaderItem>
+    //       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    //         {open && <DesplegableSoluciones onItemSelect={handleItemSelect}/>}
+    //       </div>
+    //     </div>
+    //     <Link to="https://asap-consulting.net/blog/" target="_blank">
+    //     <HeaderItem>Blog</HeaderItem>
+    //     </Link>
+    //     <Link to="https://www.linkedin.com/company/asap-consulting-s.a./" target="_blank">
+    //       <HeaderItem>Se parte de ASAP</HeaderItem>
+    //     </Link>
+    //     <Link to="/contacto">
+    //       <HeaderItem>Contacto</HeaderItem>
+    //     </Link>
+
+    //     <LanguageContainer>
+    //         <LanguageItem>
+    //           <img src="src/assets/bandera_argentina.svg" alt="bandera argentina" />
+    //         </LanguageItem>
+    //         <LanguageItem>
+    //           <img src="src/assets/bandera_GB.svg" alt="bandera gb" />
+    //         </LanguageItem>
+    //     </LanguageContainer>
+    //   </Container>
+    // </HeaderContainer>
+    
+    //Prueba responsive navbar
+    <Navbar>
+      <h2>Navbar<span>Responsive</span></h2>
+      <div className='links active'>
+        <a href="/">Home</a>
+        <a href="/">Shop</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        <a href="/">Blog</a>
+      </div>
+      <div className='burguer'>
+      <BurguerButton/>
+      </div>
+    </Navbar>
+    //
   )
 }
 
