@@ -19,6 +19,7 @@ export const BoxContainer = styled.div`
     width: 10rem;
     align-content: center;
     align-items: flex-start; //GIU
+    margin-left: 1rem;
     /* gap: 1.2rem; */ //GIU
 `;
 
