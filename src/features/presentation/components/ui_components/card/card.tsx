@@ -1,14 +1,16 @@
 import {CardContainer, Text, Image} from './card.styles';
 
-interface TitleProps {
-    text: React.ReactNode;
+export interface TitleProps {
+    text?: React.ReactNode;
     imageSrc?: string;
+    height?: string;
+    justifyContent?: string;
 }
 
-const Card: React.FC<TitleProps> = ({text, imageSrc}) => {
+const Card: React.FC<TitleProps> = ({text, imageSrc, height, justifyContent}) => {
   
   return (
-    <CardContainer>
+    <CardContainer  height={height} justifyContent={justifyContent}>
         {imageSrc && <Image src={imageSrc} alt="Card Image" />}
         <Text>{text}</Text>
     </CardContainer>

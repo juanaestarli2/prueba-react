@@ -1,29 +1,29 @@
 import styled from 'styled-components';
+import { TitleProps } from './card';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<TitleProps>`
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #fff;
     border-radius: 22px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .11);
-    margin: 33px 33px 0 10px;
-    padding: 20px 0 20px 0;
-    width: 100%;
-    max-width: 1000px;
+    padding: 5px 20px;
+    height: ${({ height }) => height || '100%'};
+    justify-content: ${({ justifyContent }) => justifyContent};
+    /* height: ${(TitleProps) => TitleProps.height || 'auto'}; */
 `;
 
 export const Text = styled.p`
     font-family: "Open Sans", roboto;
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #565b62;
     line-height: 1.5;
     text-align: center;
-    padding: 10px;
     margin: 0;
 `;
 
 export const Image = styled.img`
-    width: 120px;
+    width: 95px;
     height: auto;
 `;
