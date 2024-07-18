@@ -38,8 +38,9 @@ color: #7a7a7a;
 font-family: "Open Sans", roboto;
 font-weight: 400;
 position: relative;
-width: 50%;
+width: 100%;
 line-height: 1.2em;
+max-width: 1100px;
 `
 export const BoldText = styled.span`
 font-weight: 700;
